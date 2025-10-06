@@ -1,0 +1,73 @@
+{
+  "name": "@openai/chatkit-react-native",
+  "version": "0.0.0",
+  "description": "React Native bindings and utilities for OpenAI ChatKit.",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./polyfills": {
+      "types": "./dist/polyfills/index.d.ts",
+      "import": "./dist/polyfills/index.js",
+      "require": "./dist/polyfills/index.cjs",
+      "default": "./dist/polyfills/index.js"
+    }
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.74",
+    "expo": ">=50",
+    "expo-av": "*",
+    "expo-speech": "*",
+    "react-native-fetch-api": "^3.0.0",
+    "react-native-webrtc": ">=1.108.0"
+  },
+  "peerDependenciesMeta": {
+    "expo": {
+      "optional": true
+    },
+    "expo-av": {
+      "optional": true
+    },
+    "expo-speech": {
+      "optional": true
+    },
+    "react-native-fetch-api": {
+      "optional": true
+    },
+    "react-native-webrtc": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@openai/chatkit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-native": "^0.73.0",
+    "rimraf": "^5.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/polyfills/index.ts --format esm,cjs --dts --clean --external expo-av --external expo-speech --external expo/fetch --external react-native-fetch-api",
+    "clean": "rimraf dist"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": false
+  },
+  "license": "MIT"
+}
