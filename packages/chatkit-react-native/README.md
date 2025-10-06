@@ -117,6 +117,14 @@ const session = await createWebRTCSession({
 
 The package uses [tsup](https://tsup.egoist.dev/) to emit both ESM and CJS bundles that Metro can consume. Run `pnpm --filter @openai/chatkit-react-native build` to produce distributable artifacts.
 
+To continuously recompile during local development, pass the `--watch` flag:
+
+```bash
+pnpm --filter @openai/chatkit-react-native build --watch
+```
+
+This keeps the generated output and type declarations in sync with your source edits.
+
 ## License
 
 MIT

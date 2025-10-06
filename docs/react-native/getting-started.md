@@ -102,6 +102,8 @@ return (
 
 ## 7. Testing & CI
 
+- Run `pnpm --filter @openai/chatkit-react-native build` locally (or with `--watch` while iterating) to confirm the TypeScript
+  sources compile and the emitted declarations stay up to date.
 - Use [Expo Application Services (EAS) Build](https://docs.expo.dev/build/introduction/) to produce reproducible binaries with the required native modules.
 - Add simulator coverage for both iOS and Android in CI (e.g. GitHub Actions with `react-native-testing-library`).
 - Include integration smoke tests that call the streaming HTTP helper and WebRTC wrapper to catch regressions in networking polyfills.

@@ -106,6 +106,17 @@ streaming HTTP helpers, WebRTC wrappers, voice primitives, and opinionated UI bu
 Read the [React Native getting started guide](docs/react-native/getting-started.md) for details on Expo networking, WebRTC
 signalling, voice support, and testing recommendations.
 
+### Testing the React Native package
+
+Run the package build to ensure the TypeScript sources compile before publishing:
+
+```bash
+pnpm --filter @openai/chatkit-react-native build
+```
+
+The command bundles the entry points with `tsup` and validates the generated type declarations. If you are iterating on the
+package locally, you can append `--watch` to rebuild on file changes.
+
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
