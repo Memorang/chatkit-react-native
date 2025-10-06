@@ -79,9 +79,32 @@ Just add the ChatKit component, give it a client token, and customize the chat e
        },
      });
 
-     return <ChatKit control={control} className="h-[600px] w-[320px]" />;
-   }
-   ```
+   return <ChatKit control={control} className="h-[600px] w-[320px]" />;
+  }
+  ```
+
+### React Native (Expo) preview
+
+Experimental support for Expo and bare React Native apps lives in the `@openai/chatkit-react-native` package. The library ships
+streaming HTTP helpers, WebRTC wrappers, voice primitives, and opinionated UI building blocks (`ChatList`, `ChatComposer`).
+
+- Install the package alongside the recommended polyfills:
+
+  ```bash
+  pnpm add @openai/chatkit-react-native react-native-polyfill-globals react-native-url-polyfill react-native-get-random-values base-64
+  ```
+
+- Import the polyfills at the top of your app entry point before rendering any ChatKit component:
+
+  ```ts
+  import 'react-native-polyfill-globals/auto';
+  import 'react-native-url-polyfill/auto';
+  import 'react-native-get-random-values';
+  import 'base-64';
+  ```
+
+Read the [React Native getting started guide](docs/react-native/getting-started.md) for details on Expo networking, WebRTC
+signalling, voice support, and testing recommendations.
 
 ## License
 
